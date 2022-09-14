@@ -13,6 +13,9 @@ BEGIN;
 UPDATE animals SET species = 'unspecified';
 ROLLBACK;
 
+ALTER TABLE animals
+ADD species TEXT;
+
 BEGIN;
 UPDATE animals SET species = 'digimon' WHERE name LIKE '%mon';
 UPDATE animals SET species = 'pokemon' WHERE name NOT LIKE '%mon';
